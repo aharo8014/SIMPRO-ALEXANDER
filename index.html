@@ -29,6 +29,7 @@
         <span id="eventBadge" class="badge">Evento del día</span>
       </div>
       <p id="eventText" class="event-text"></p>
+      <div class="ranges" id="ranges"></div>
 
       <form id="decisionForm" class="decision-grid">
         <h3>Producción objetivo (u buenas)</h3>
@@ -84,6 +85,11 @@
     <section class="panel final" id="finalPanel" hidden>
       <h2>Cierre semanal</h2>
       <div id="finalSummary"></div>
+      <div class="participant-box">
+        <label>Nombre del estudiante/equipo (obligatorio para PDF)
+          <input type="text" id="participantName" placeholder="Ej: Alexander Haro" />
+        </label>
+      </div>
       <div class="actions">
         <button id="finalizeBtn" class="btn-primary">Finalizar simulador</button>
         <button id="downloadPdfBtn" class="btn-secondary" hidden>Descargar Reporte PDF</button>
