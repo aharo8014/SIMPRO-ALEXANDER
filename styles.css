@@ -38,12 +38,28 @@ h1 { margin: .2rem 0; font-size: clamp(1.4rem, 3vw, 2.2rem); }
   backdrop-filter: blur(6px);
 }
 .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .8rem; }
-.stat { background: var(--card); border-radius: 12px; padding: .8rem; }
+.stat { background: var(--card); border-radius: 12px; padding: .8rem; border: 1px solid #313131; }
 .stat h4 { margin: 0; color: var(--muted); font-size: .85rem; }
 .stat strong { font-size: 1.2rem; }
 .section-head { display:flex; justify-content: space-between; align-items:center; }
 .badge { background: #2a2a2a; color: #fff; padding:.3rem .7rem; border-radius:999px; border:1px solid #444; }
 .event-text { color: #f0f0f0; opacity: .95; }
+.ranges {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:.6rem;
+  margin-bottom: 1rem;
+}
+.range-card {
+  border: 1px solid #474747;
+  border-radius: 10px;
+  background: #171717;
+  padding: .55rem .7rem;
+  font-size: .9rem;
+}
+.range-card b { color: #fff; }
+.safe { color: var(--green); }
+.risk { color: var(--yellow); }
 .decision-grid h3 { margin-bottom: .5rem; }
 .grid-3 { display:grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap:.8rem; margin-bottom: 1rem; }
 label { display:flex; flex-direction:column; gap:.35rem; color:#ddd; font-size:.9rem; }
@@ -63,3 +79,4 @@ input, select {
 .kpi-yellow { color: var(--yellow); }
 .kpi-red { color: var(--red); }
 .actions { display:flex; gap:.8rem; margin-top:1rem; }
+.participant-box { margin-top: .8rem; max-width: 420px; }
