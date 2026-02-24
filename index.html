@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIMPRO-7 | PROANDES Manufacturing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="brand">SIMPRO-7</p>
+        <h1>PROANDES Manufacturing S.A.</h1>
+        <p class="subtitle">Simulador semanal de decisiones operativas, costos, calidad y cumplimiento.</p>
+      </div>
+      <div class="pill">Diseño estilo Netflix</div>
+    </header>
+
+    <section class="panel status-grid" id="overviewCards"></section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2 id="dayTitle">Día 1</h2>
+        <span id="eventBadge" class="badge">Evento del día</span>
+      </div>
+      <p id="eventText" class="event-text"></p>
+
+      <form id="decisionForm" class="decision-grid">
+        <h3>Producción objetivo (u buenas)</h3>
+        <div class="grid-3">
+          <label>P1 <input type="number" min="0" id="p1" required /></label>
+          <label>P2 <input type="number" min="0" id="p2" required /></label>
+          <label>P3 <input type="number" min="0" id="p3" required /></label>
+        </div>
+
+        <h3>Operación y calidad</h3>
+        <div class="grid-3">
+          <label>Horas extra (0-2)
+            <input type="number" id="overtime" min="0" max="2" step="0.5" value="0" />
+          </label>
+          <label>Operarios entrenados hoy
+            <input type="number" id="trained" min="0" max="4" value="0" />
+          </label>
+          <label>Mantenimiento preventivo (máquinas)
+            <input type="number" id="preventive" min="0" max="6" value="0" />
+          </label>
+        </div>
+
+        <div class="grid-3">
+          <label>Nivel calidad P2
+            <select id="qualityP2">
+              <option value="high">Alta</option>
+              <option value="medium" selected>Media</option>
+              <option value="low">Baja</option>
+            </select>
+          </label>
+          <label>Pedido Aditivo
+            <select id="orderType">
+              <option value="none">Sin compra</option>
+              <option value="normal">Normal (2 días)</option>
+              <option value="express">Exprés (1 día)</option>
+              <option value="urgent">Urgente (hoy)</option>
+            </select>
+          </label>
+          <label>Cantidad Aditivo (kg)
+            <input type="number" id="orderQty" min="0" value="0" />
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitDay">Cerrar Día</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Historial diario</h2>
+      <div id="history" class="history"></div>
+    </section>
+
+    <section class="panel final" id="finalPanel" hidden>
+      <h2>Cierre semanal</h2>
+      <div id="finalSummary"></div>
+      <div class="actions">
+        <button id="finalizeBtn" class="btn-primary">Finalizar simulador</button>
+        <button id="downloadPdfBtn" class="btn-secondary" hidden>Descargar Reporte PDF</button>
+      </div>
+      <p id="finalMessage"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
